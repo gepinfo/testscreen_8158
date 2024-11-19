@@ -1,0 +1,47 @@
+<h2 class="screen-align">Hospital order</h2>
+<div id="ixvo" class="">
+    <div id="template-ivwe" class="gjs-row">
+        <div id="template-imzp" class="gjs-cell">
+            <div id="template-i0m5" class="">Outstanding Orders</div>
+        </div>
+    </div>
+    <div name="grid_template-id95" class="">
+        <div class="tableBg">
+            <table id="table" class="table table-bordered  table-striped table-curved table-response"
+            data-show-header="true" data-pagination="true" data-id-field="name">
+                <thead class="table table-hover">
+                    <tr>
+                        <th *ngFor="let column of columnDefs">{{column.headerName}}</th>
+                    </tr>
+                </thead>
+                <tbody class="table-design" *ngIf="rowData.length==0">
+                    <td style="text-align: center;" colspan="5">No Data Found</td>
+                </tbody>
+                <tbody class="table-design" *ngIf="rowData.length>0">
+                    <tr *ngFor="let values of rowData | slice: (page-1) * paginationPageSize :(page-1) * paginationPageSize + paginationPageSize">
+                        <td>{{ values.orderid }}</td>
+                        <td>{{ values.orderdate }}</td>
+                        <td>{{ values.specimen }}</td>
+                        <td>{{ values.patientid }}</td>
+                        <td>{{ values.facilityid }}</td>
+                        <td>{{ values. }}</td>
+                        <td>{{ values.episodetype }}</td>
+                        <td>{{ values.episodeid }}</td>
+                        <td>{{ values.doctor }}</td>
+                        <td>{{ values.code }}</td>
+                        <td>{{ values.pscode }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="bottomPage">
+            <div class="text-right">
+                <ngb-pagination class="d-flex justify-content-start" [(page)]="page" [maxSize]="5"
+                [rotate]="true" [pageSize]="paginationPageSize" [collectionSize]="rowData.length"
+                [boundaryLinks]="true"></ngb-pagination>
+            </div>
+        </div>
+        <div id="myGrid" class=""></div>
+    </div>
+    <div id="myGrid" class="ag-theme-alpine "></div>
+</div>
